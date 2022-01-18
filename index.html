@@ -38,10 +38,53 @@
         }
 
         console.log(memoPad.inputs.title)
-// 関数の定義
+        // 関数の定義
+
+        // タイトルを取得
+        // const getTitle = () => memoPad.inputs.title.value
+        function getTitle() {
+            return memoPad.inputs.title.value
+        }
+
+        // bodyを取得
+        function getBody() {
+            return memoPad.inputs.body.value
+        }
+
+        // ローカルストレージに登録する　type:1
+        // function register() {
+        //     const key = getTitle()
+        //     const value = getBody()
+        //     localStorage.setItem(key, value)
+        // }
+
+        // ローカルストレージに登録する　type:2
+        function register(key, value){
+            localStorage.setItem(key, value)
+        }
+
+        // リストに表示
+        function setList() {
+            // リストに表示する関数
+        }
+
+        // saveBtnが押された時の処理
+        function onSaveHandler() {
+            const title = getTitle()
+            const body = getBody()
 
 
-//1.Save クリックイベント
+            // // ローカルストレージに登録
+            register(title, body)
+
+            // // リストに表示
+            // setList()
+        }
+
+
+
+        //1.Save クリックイベント
+        memoPad.btns.save.addEventListener('click', onSaveHandler)
 
 
 
