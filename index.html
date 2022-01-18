@@ -34,57 +34,32 @@
                 save: document.getElementById('js-saveBtn'),
                 clear: document.getElementById('js-clearBtn')
             },
-            list: document.getElementById('list')
+            list: document.getElementById('list'),
+
+            getTitle: function () {
+                return this.inputs.title.value
+            },
+            getBody: function () {
+                return this.inputs.body.value
+            },
+            register: function (key, value) {
+                localStorage.setItem(key, value)
+            },
+            setList: function () { },
+            onSaveHandler: function () {
+                const title = this.getTitle()
+                const body = this.getBody()
+                // // ローカルストレージに登録
+                this.register(title, body)
+            },
+            init() { }
         }
-
-        console.log(memoPad.inputs.title)
-        // 関数の定義
-
-        // タイトルを取得
-        // const getTitle = () => memoPad.inputs.title.value
-        function getTitle() {
-            return memoPad.inputs.title.value
-        }
-
-        // bodyを取得
-        function getBody() {
-            return memoPad.inputs.body.value
-        }
-
-        // ローカルストレージに登録する　type:1
-        // function register() {
-        //     const key = getTitle()
-        //     const value = getBody()
-        //     localStorage.setItem(key, value)
-        // }
-
-        // ローカルストレージに登録する　type:2
-        function register(key, value){
-            localStorage.setItem(key, value)
-        }
-
-        // リストに表示
-        function setList() {
-            // リストに表示する関数
-        }
-
-        // saveBtnが押された時の処理
-        function onSaveHandler() {
-            const title = getTitle()
-            const body = getBody()
-
-
-            // // ローカルストレージに登録
-            register(title, body)
-
-            // // リストに表示
-            // setList()
-        }
-
 
 
         //1.Save クリックイベント
-        memoPad.btns.save.addEventListener('click', onSaveHandler)
+        // memoPad.btns.save.addEventListener('click', memoPad.onSaveHandler)
+
+        memoPad.init()
 
 
 
