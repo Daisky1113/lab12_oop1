@@ -12,11 +12,11 @@
         <h1>MemoPad</h1>
     </header>
     <main>
-        <input type="text">
-        <textarea></textarea>
+        <input id="js-titleInput" type="text">
+        <textarea id="js-bodyInput"></textarea>
         <ul>
-            <li>Save</li>
-            <li>Clear</li>
+            <li id="js-saveBtn">Save</li>
+            <li id="js-clearBtn">Clear</li>
         </ul>
     </main>
     <table id="list">
@@ -24,13 +24,42 @@
     </table>
     <script>
 
-// DOMの取得
+        // DOMの取得
+        const memoPad = {
+            inputs: {
+                title: document.getElementById('js-titleInput'),
+                body: document.getElementById('js-bodyInput')
+            },
+            btns: {
+                save: document.getElementById('js-saveBtn'),
+                clear: document.getElementById('js-clearBtn')
+            },
+            list: document.getElementById('list'),
+
+            getTitle: function () {
+                return this.inputs.title.value
+            },
+            getBody: function () {
+                return this.inputs.body.value
+            },
+            register: function (key, value) {
+                localStorage.setItem(key, value)
+            },
+            setList: function () { },
+            onSaveHandler: function () {
+                const title = this.getTitle()
+                const body = this.getBody()
+                // // ローカルストレージに登録
+                this.register(title, body)
+            },
+            init() { }
+        }
 
 
-// 関数の定義
+        //1.Save クリックイベント
+        // memoPad.btns.save.addEventListener('click', memoPad.onSaveHandler)
 
-
-//1.Save クリックイベント
+        memoPad.init()
 
 
 
