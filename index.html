@@ -12,11 +12,11 @@
         <h1>MemoPad</h1>
     </header>
     <main>
-        <input type="text">
-        <textarea></textarea>
+        <input id="js-titleInput" type="text">
+        <textarea id="js-bodyInput"></textarea>
         <ul>
-            <li>Save</li>
-            <li>Clear</li>
+            <li id="js-saveBtn">Save</li>
+            <li id="js-clearBtn">Clear</li>
         </ul>
     </main>
     <table id="list">
@@ -24,9 +24,20 @@
     </table>
     <script>
 
-// DOMの取得
+        // DOMの取得
+        const memoPad = {
+            inputs: {
+                title: document.getElementById('js-titleInput'),
+                body: document.getElementById('js-bodyInput')
+            },
+            btns: {
+                save: document.getElementById('js-saveBtn'),
+                clear: document.getElementById('js-clearBtn')
+            },
+            list: document.getElementById('list')
+        }
 
-
+        console.log(memoPad.inputs.title)
 // 関数の定義
 
 
