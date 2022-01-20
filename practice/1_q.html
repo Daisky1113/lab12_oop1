@@ -14,16 +14,80 @@
 
     console.log(users)
 
-    //　データ型
-    // user : {
-    //   id: Number,
-    //   name: String,
-    //   email: String,
-    //   blogs: Array,
+    // //　データ型
+    // // user : {
+    // //   id: Number,
+    // //   name: String,
+    // //   email: String,
+    // //   blogs: Array,
+    // // }
+
+    // // アローファンクション
+
+    // // 関数宣言文
+    // function test1() {
+    //   console.log('test')
     // }
 
+    // // 関数定義式
+    // const test2 = function () {
+    //   console.log('test')
+    // }
+
+    // // 上と等価のコード
+    // // アローファンクション
+    // const test3 = () => console.log('test')
+
+    // // 引数ありのアローファンクションの例
+    // const cube = n => n * n * n
+
+    // // return 文ありのcube
+    // const cubeWithReturn = n => {
+    //   const cube = n * n * n
+    //   return cube
+    // }
+
+    // console.log(cube(3))
+    // console.log(cubeWithReturn(4))
+
+    // // 引数が複数の場合のアローファンクションの定義の仕方
+    // const hello = (name, after) => `Hello ${name} ${after}`
+    // console.log(hello('Daisky', 'SAN'))
+
+    // // 関数の中身が複数行になる場合
+    // const helloAndHello = (name1, name2) => {
+    //   console.log(`Hello ${name1}`)
+    //   console.log(`Hello ${name2}`)
+    // }
+
+    // helloAndHello('daisky', 'min')
 
     // Q1: usersの中からidが6の人のデータを取得する
+    // 昔ながらの書き方
+    // function getUserDataById(id, data) {
+    //   for (let i = 0; i < data.length; i++) {
+    //     if (data[i].id === id) {
+    //       return data[i]
+    //     }
+    //   }
+    // }
+
+    // アローファンクションを使った書き方
+    // const getUserDataById = (id, data) => {
+    //   for (let i = 0; i < data.length; i++) {
+    //     if (data[i].id === id) {
+    //       return data[i]
+    //     }
+    //   }
+    // }
+
+    // 最終的な書き方
+    // filterの使い方
+    const getuserDataById = (id, data) => data.filter(el => el.id === id)
+
+    const id6User = getuserDataById(6, users)
+    console.log(id6User)
+
 
     // Q2: usersの中からidが13より後の人のデータだけ取得する
 
