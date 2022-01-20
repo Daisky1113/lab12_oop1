@@ -100,12 +100,17 @@
     //   }
     //   return result
     // }
-    const getOver13members = members => menbers.filter(member.id > 13)
+    const getOver13members = members => members.filter(members.id > 13)
 
     const over13members = getOver13members(users)
     console.log(over13members)
 
     // Q4: usersの中から名前に『口』（漢字のくち）がつく人のデータだけ取得する
+    const getKuchiUserMembers = members => members.find(el => el.name === "口");
+
+    const kuchiUserMembers = getKuchiUserMembers(users)
+    console.log(kuchiUserMembers)
+
 
     // Q5: usersのデータからmailに.hogeが含まれるデータだけ取得する
 
