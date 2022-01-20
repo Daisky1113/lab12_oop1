@@ -55,6 +55,10 @@
     const exist7 = idInclusion(7, users)
     console.log(exist7)
     // Q8: usersのデータをidでみて降順（大きい順）に並び替える
+    const idSort = data => data.sort((a, b) => b.id - a.id)
+
+    const sortedUsers = idSort(users)
+    console.log(sortedUsers)
 
     // Q9: usersのデータをidでみて昇順（小さい順）になるように並び替える
 
