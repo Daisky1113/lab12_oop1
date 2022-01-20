@@ -47,7 +47,7 @@
     // Q6: usersのデータからmailに.fooが含まれないデータだけ取得する
     const mailNotInclusion = (email, data) => data.filter(el => !(el.email.match(email)))
 
-    const fooEmail = mailNotInclusion('hoge', users)
+    const fooEmail = mailNotInclusion('foo', users)
     console.log(fooEmail)
     // Q7: usersのデータにidが7の物があるかないか調べる
 
