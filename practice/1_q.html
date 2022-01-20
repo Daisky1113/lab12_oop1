@@ -14,7 +14,7 @@
 
     console.log(users)
 
-    // //　データ型
+    // // データ型
     // // user : {
     // //   id: Number,
     // //   name: String,
@@ -90,7 +90,7 @@
 
 
     // Q2: usersの中からidが13より後の人のデータだけ取得する
-    //　普通の書き方
+    // 普通の書き方
     // function getOver13members(members) {
     //   const result = []
     //   for (let i = 0; i < members.length; i++) {
@@ -112,7 +112,13 @@
     // Q6: usersのデータからmailに.fooが含まれないデータだけ取得する
 
     // Q7: usersのデータにidが7の物があるかないか調べる
-
+    const FilterIdEqual7 = (members) => members.filter(member => member.id === 7)
+    const resultFromId7 = FilterIdEqual7(users)
+    if(resultFromId7 != null) {
+      console.log("idが7のuserは存在します");
+    } else {
+      console.log("idが7のuserは存在しません")
+    }
     // Q8: usersのデータをidでみて降順（大きい順）に並び替える
 
     // Q9: usersのデータをidでみて昇順（小さい順）になるように並び替える
