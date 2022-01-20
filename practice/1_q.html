@@ -25,7 +25,15 @@
 
     // Q1: usersの中からidが6の人のデータを取得する
 
+        // const getuserDataById = (id, data) => data.filter(el => el.id === id)
+
+        //   const id6User = getuserDataById(6, users)
+        //   console.log(id6User)
+
     // Q2: usersの中からidが13より後の人のデータだけ取得する
+
+    const q2 = (id, data) => data.filter(el => el.id > id)
+    console.log(q2(13, users))
 
     // Q4: usersの中から名前に『口』（漢字のくち）がつく人のデータだけ取得する
 
