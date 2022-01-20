@@ -24,26 +24,71 @@
 
 
     // Q1: usersの中からidが6の人のデータを取得する
+    const getUserDataById = (id, data) => data.filter(el => el.id === id)
+    
+    const UserDataById = getUserDataById(6, users)
+    console.log(UserDataById);
 
     // Q2: usersの中からidが13より後の人のデータだけ取得する
+    const getUserDataAfter13 = (id, data) => data.filter(el => el.id > id)
+
+    const UserDataAfter13 = getUserDataAfter13(13, users)
+    console.log(UserDataAfter13);
 
     // Q4: usersの中から名前に『口』（漢字のくち）がつく人のデータだけ取得する
+    const getUserDataByKuchi = (name, data) => data.filter(el => el.name.match(name))
+
+    const UserDataByKuchi = getUserDataByKuchi("口", users)
+    console.log(UserDataByKuchi);
 
     // Q5: usersのデータからmailに.hogeが含まれるデータだけ取得する
+    const getUserDataByEmailHoge = (email, data) => data.filter(el => el.email.match(email))
+
+    const UserDataByEmailHoge = getUserDataByEmailHoge("hoge", users)
+    console.log(UserDataByEmailHoge);
 
     // Q6: usersのデータからmailに.fooが含まれないデータだけ取得する
+    const getUserDataByEmailNotFoo = (email, data) => data.filter(el => !el.email.match(email))
+
+    const UserDataByEmailNotFoo = getUserDataByEmailNotFoo("foo", users)
+    console.log(UserDataByEmailNotFoo);
 
     // Q7: usersのデータにidが7の物があるかないか調べる
+    const isIdInclude = (id, data) => data.some(el => el.id === id)
+
+    const isIdInclude7 = isIdInclude(7, users)
+    console.log(isIdInclude7);
 
     // Q8: usersのデータをidでみて降順（大きい順）に並び替える
+    const orderByIdDesc = data => data.slice().sort((a, b) => a.id < b.id ? -1 : 1)
+
+    const orderDesc = orderByIdDesc(users)
+    console.log(orderDesc);
 
     // Q9: usersのデータをidでみて昇順（小さい順）になるように並び替える
+    const orderByIdAsc = data => data.slice().sort((a, b) => a.id > b.id ? -1 : 1)
+
+    const orderAsc = orderByIdAsc(users)
+    console.log(orderAsc);
 
     // Q10: usersのidで最大の物を取得する
+    const getBiggestId = data => data.slice().sort((a, b) => a.id > b.id ? -1 : 1)
+
+    const BiggestId = getBiggestId(users)[0]
+    console.log(BiggestId);
 
     // Q11: usersのidで最小の物を取得する
+    const getSmallestId = data => data.slice().sort((a, b) => a.id < b.id ? -1 : 1)
+
+    const SmallestId = getSmallestId(users)[0]
+    console.log(SmallestId);
 
     // Q12: usersのidを全て合計する
+    const getIdSum = data => data.reduce((a, b) => a.id > b.id)
+    
+
+    const IdSum = getIdSum(users)
+    console.log(IdSum)
 
   </script>
 </body>
