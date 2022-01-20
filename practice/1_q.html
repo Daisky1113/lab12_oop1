@@ -90,6 +90,20 @@
 
 
     // Q2: usersの中からidが13より後の人のデータだけ取得する
+    //　普通の書き方
+    // function getOver13members(members) {
+    //   const result = []
+    //   for (let i = 0; i < members.length; i++) {
+    //     if (members[i].id > 13) {
+    //       result.push(members[i])
+    //     }
+    //   }
+    //   return result
+    // }
+    const getOver13members = members => members.filter(member => member.id > 13)
+
+    const over13members = getOver13members(users)
+    console.log(over13members)
 
     // Q4: usersの中から名前に『口』（漢字のくち）がつく人のデータだけ取得する
 
