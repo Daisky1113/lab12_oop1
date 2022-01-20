@@ -24,11 +24,21 @@
 
 
     // Q1: usersの中からidが6の人のデータを取得する
-    
+    const getuserDataById = (id, data) => data.filter(el => el.id === id)
+
+    const id6User = getuserDataById(6, users)
+    console.log(id6User)
+
     // Q2: usersの中からidが13より後の人のデータだけ取得する
+    const getuserDataOverId = (id, data) => data.filter(el => el.id > id)
 
+    const idOver13Users = getuserDataOverId(13, users)
+    console.log(idOver13Users)
     // Q4: usersの中から名前に『口』（漢字のくち）がつく人のデータだけ取得する
+    const getuserDataInclusion = (name, data) => data.filter(el => el.name.match(name))
 
+    const DataInclusion = getuserDataInclusion('口', users)
+    console.log(DataInclusion)
     // Q5: usersのデータからmailに.hogeが含まれるデータだけ取得する
 
     // Q6: usersのデータからmailに.fooが含まれないデータだけ取得する
