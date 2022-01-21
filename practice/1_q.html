@@ -59,23 +59,40 @@
     const exist7 = idInclusion(7, users)
     console.log(exist7)
     // Q8: usersのデータをidでみて降順（大きい順）に並び替える
-    const idSortDesc = data => data.sort((a, b) => b.id - a.id)
+    const idSortDesc = data => data.slice().sort((a, b) => b.id - a.id)
 
     const sortedDescUsers = idSortDesc(users)
     console.log(sortedDescUsers)
 
     // Q9: usersのデータをidでみて昇順（小さい順）になるように並び替える
-    const idSort = data => data.sort((a, b) => a.id - b.id)
+    const idSort = data => data.slice().sort((a, b) => a.id - b.id)
 
     const sortedUsers = idSort(users)
     console.log(sortedUsers)
 
     // Q10: usersのidで最大の物を取得する
 
+    // データからidからなる配列を作る関数
+    const makeList = data => data.map(el => el.id)
+
+    // 配列の最大値を取る関数
+    const getMax = data => data.reduce((a,b) => Math.max(a,b))
+
+    // 答えの導出
+    const idMax = getMax(makeList(users))
+    console.log(idMax)
+
     // Q11: usersのidで最小の物を取得する
 
-    // Q12: usersのidを全て合計する
+    // 配列の最小値を取る関数
+    const getMin = data => data.reduce((a,b) => Math.min(a,b))
 
+    // 答えの導出
+    const idMin = getMin(makeList(users))
+    console.log(idMin)
+
+    // Q12: usersのidを全て合計する
+    
   </script>
 </body>
 
