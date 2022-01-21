@@ -51,6 +51,10 @@
     console.log(getValue(sakuraBlogs, "likeCount", maxLikeCount, "title"))
 
     // Q3: 宮本さくらさんのブログで非公開になっているものの中の最大のlikeCountは？そのタイトルは？
+    const privateSakuraBlogs = sakuraBlogs.filter(el => el["publish"] === false)
+    const privateMaxCount = getMax(makeList(privateSakuraBlogs, "likeCount"))
+    console.log(privateMaxCount)
+    console.log(getValue(privateSakuraBlogs, "likeCount", privateMaxCount, "title"))
 
     // Q4: 宮本さくらさんのブログの公開率は？
 
