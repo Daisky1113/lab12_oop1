@@ -60,6 +60,15 @@
     console.log(privateSakuraBlogs.length / sakuraBlogs.length)
 
     // Q5: 宮本さくらさんのブログに最もついているタグは？、その個数は？
+    let sakuraTags = new Map()
+    const count = (counter, li) => {
+      li.map(el => el in counter ? counter[el] += 1 : counter[el] = 1)
+    }
+    sakuraBlogs.map(el => count(sakuraTags, el.tags))
+    const maxCountTag = getMax(Object.keys(sakuraTags).map(el => sakuraTags[el]))
+    console.log(maxCountTag)
+    console.log(Object.keys(sakuraTags).map(el => sakuraTags[el] === maxCountTag ? el : null)
+      .reduce((el1, el2) => el1 === null ? el2 : el1))
 
     // Q6: 全てのブログの中で最もLikeCountの多いもののタイトルは？
 
