@@ -31,8 +31,24 @@
     // }
 
     // Q1: 宮本さくらさんのidは？
+    const getValue = (data, key, key2, value) => {
+      const valueList = data.map(el => el[key] === key2 ? el[value] : null)
+      return valueList.reduce((el1, el2) => el1 === null ? el2 : el1)
+    }
+    console.log(getValue(users, "name", "宮本さくら", "id"))
 
     // Q2: 宮本さくらさんのブログで最もlikeCountの多いもののtitleは？
+    const getObject = (data, key, key2) => {
+      const obj = data.map(el => el[key] === key2 ? el : null)
+      return obj.reduce((el1, el2) => el1 === null ? el2 : el1)
+    }
+
+    const makeList = (data, key) => data.map(el => el[key])
+    const getMax = data => data.reduce((a,b) => Math.max(a,b))
+
+    const sakuraBlogs = getObject(users, "name", "宮本さくら").blogs
+    const maxLikeCount = getMax(makeList(sakuraBlogs, "likeCount"))
+    console.log(getValue(sakuraBlogs, "likeCount", maxLikeCount, "title"))
 
     // Q3: 宮本さくらさんのブログで非公開になっているものの中の最大のlikeCountは？そのタイトルは？
 
