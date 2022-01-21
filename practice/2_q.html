@@ -13,7 +13,7 @@
     import { users } from './data/blogs.js'
     console.log(users)
 
-    // user : {
+    // users : {
     //   id: Number,
     //   name: String,
     //   email: String,
@@ -71,9 +71,16 @@
       .reduce((el1, el2) => el1 === null ? el2 : el1))
 
     // Q6: 全てのブログの中で最もLikeCountの多いもののタイトルは？
+    let likeCounts = new Map()
+    users.map(el => {
+      el.blogs.map(el2 => likeCounts[el.name + '/' + el2.title] = el2.likeCount)
+    })
+    const maxLikeCountAll = getMax(Object.keys(likeCounts).map(el => likeCounts[el]))
+    const maxLikeCountTitle = Object.keys(likeCounts).map(el => likeCounts[el] === maxLikeCountAll ? el : null).reduce((el1, el2) => el1 === null ? el2 : el1)
+    console.log(maxLikeCountTitle.split('/')[1])
 
     // Q7: 全てのブログの中で最もLikeCountの多いもののユーザー名は？
-
+    console.log(maxLikeCountTitle.split('/')[0])
 
 
   </script>
