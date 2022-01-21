@@ -93,6 +93,13 @@
 
     // Q12: usersのidを全て合計する
     
+    // 配列の最小値を取る関数
+    const getSum = data => data.reduce((a,b) => a + b)
+    
+    // 答えの導出
+    const idSum = getSum(makeList(users))
+    console.log(idSum)
+
   </script>
 </body>
 
