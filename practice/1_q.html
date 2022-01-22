@@ -84,11 +84,14 @@
     console.log(SmallestId);
 
     // Q12: usersのidを全て合計する
-    const getIdSum = data => data.reduce((a, b) => a.id > b.id)
+    const getIdSum = data => Object.keys(data).map(key => {
+      const value = data[key]['id'] //これで数字の配列ができた
+      return value
+    })
     
-
     const IdSum = getIdSum(users)
-    console.log(IdSum)
+    const reducer = (a, b) => a + b
+    console.log(IdSum.reduce(reducer))
 
   </script>
 </body>
